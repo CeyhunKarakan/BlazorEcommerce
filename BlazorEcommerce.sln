@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33103.184
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEcommerce.Server", "BlazorEcommerce\Server\BlazorEcommerce.Server.csproj", "{7E14CF2D-4BEC-4BD5-82AA-BA0DDDABCF56}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEcommerce.Client", "BlazorEcommerce\Client\BlazorEcommerce.Client.csproj", "{7F0D1B77-A604-4534-A274-C6FAF823CA96}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorEcommerce.Shared", "BlazorEcommerce\Shared\BlazorEcommerce.Shared.csproj", "{92F3380E-F739-4231-A767-634BC18B343D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7E14CF2D-4BEC-4BD5-82AA-BA0DDDABCF56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E14CF2D-4BEC-4BD5-82AA-BA0DDDABCF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E14CF2D-4BEC-4BD5-82AA-BA0DDDABCF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E14CF2D-4BEC-4BD5-82AA-BA0DDDABCF56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0D1B77-A604-4534-A274-C6FAF823CA96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0D1B77-A604-4534-A274-C6FAF823CA96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0D1B77-A604-4534-A274-C6FAF823CA96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0D1B77-A604-4534-A274-C6FAF823CA96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92F3380E-F739-4231-A767-634BC18B343D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92F3380E-F739-4231-A767-634BC18B343D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92F3380E-F739-4231-A767-634BC18B343D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92F3380E-F739-4231-A767-634BC18B343D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9D70BC5-E6AE-452C-91E0-FFFA1E253BAC}
+	EndGlobalSection
+EndGlobal
