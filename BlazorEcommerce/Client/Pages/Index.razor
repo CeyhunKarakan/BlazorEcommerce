@@ -3,9 +3,14 @@
 @page "/{categoryUrl}"
 @inject IProductService ProductService
 
-<PageTitle>My Shop</PageTitle>
+<PageTitle>CK Shop</PageTitle>
 
+@if(SearchText == null && categoryUrl == null){
+    <FeaturedProducts></FeaturedProducts>
+}
+else{
 <ProductList></ProductList>
+}
 
 @code{
     [Parameter]
