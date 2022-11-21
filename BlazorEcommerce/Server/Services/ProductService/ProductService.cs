@@ -51,11 +51,26 @@ namespace BlazorEcommerce.Server.Services.ProductService
             return response;
         }
 
-        public async Task<ServiceResponse<List<Product>>> SearchProducts(string searchText)
+        public async Task<ServiceResponse<ProductSearchResult>> SearchProducts(string searchText, int page)
         {
-            var response = new ServiceResponse<List<Product>>
+            var pageResults = 2f;
+            var pageCount = Math.Ceiling((await FindProductsBySearchText(searchText)).Count / pageResults);
+            var products = await _context.Products
+                                   .Where(x => x.Title.ToLower().Contains(searchText.ToLower()) ||
+                                   x.Description.ToLower().Contains(searchText.ToLower()))
+                                   .Include(x => x.Variants)
+                                   .Skip((page - 1) * (int)pageResults)
+                                   .Take((int)pageResults)
+                                   .ToListAsync();
+
+            var response = new ServiceResponse<ProductSearchResult>
             {
-                Data = await FindProductsBySearchText(searchText)
+                Data = new ProductSearchResult
+                {
+                    Products = products,
+                    CurrentPage= page,
+                    Pages = (int)pageCount
+                }
             };
             return response;
         }
@@ -88,7 +103,7 @@ namespace BlazorEcommerce.Server.Services.ProductService
 
                     foreach (var word in words)
                     {
-                        if(word.Contains(searchText, StringComparison.OrdinalIgnoreCase)
+                        if (word.Contains(searchText, StringComparison.OrdinalIgnoreCase)
                             && !result.Contains(word))
                         {
                             result.Add(word);
@@ -106,7 +121,7 @@ namespace BlazorEcommerce.Server.Services.ProductService
             {
                 Data = await _context.Products.Where(x => x.Featured)
                 .Include(x => x.Variants).ToListAsync()
-        };
+            };
             return response;
         }
     }
