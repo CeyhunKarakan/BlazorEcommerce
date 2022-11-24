@@ -20,17 +20,17 @@
                 var product = await _context.Products
                     .Where(x => x.Id == item.ProductId).FirstOrDefaultAsync();
 
-                if(product == null)
+                if (product == null)
                 {
                     continue;
                 }
 
                 var productVariant = await _context.ProductVariants
-                    .Where(v=> v.ProductId== item.ProductId && v.ProductTypeId == item.ProductTypeId)
-                    .Include(v=>v.ProductType)
+                    .Where(v => v.ProductId == item.ProductId && v.ProductTypeId == item.ProductTypeId)
+                    .Include(v => v.ProductType)
                     .FirstOrDefaultAsync();
 
-                if(productVariant == null)
+                if (productVariant == null)
                 {
                     continue;
                 }
@@ -38,8 +38,8 @@
                 var cartProduct = new CartProductResponse
                 {
                     ProductId = product.Id,
-                    Title= product.Title,
-                    ImageUrl= product.ImageUrl,
+                    Title = product.Title,
+                    ImageUrl = product.ImageUrl,
                     Price = productVariant.Price,
                     ProductType = productVariant.ProductType.Name,
                     ProductTypeId = productVariant.ProductTypeId,
